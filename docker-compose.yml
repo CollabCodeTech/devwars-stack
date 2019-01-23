@@ -39,6 +39,7 @@ services:
       - ./api/nodemon.json:/devwars/nodemon.json
       - ./api/tsconfig.json:/devwars/tsconfig.json
       - ./api/tslint.json:/devwars/tslint.json
+      - ./api/firebase.json:/devwars/firebase.json
     depends_on:
       - database
     links:
