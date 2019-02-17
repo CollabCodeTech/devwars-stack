@@ -31,15 +31,8 @@ services:
     env_file:
       - .env.api
     volumes:
-      - ./api/app:/devwars/app
-      - ./api/config:/devwars/config
-      - ./api/cli:/devwars/cli
-      - ./api/Index.ts:/devwars/Index.ts
-      - ./api/config.ts:/devwars/config.ts
-      - ./api/nodemon.json:/devwars/nodemon.json
-      - ./api/tsconfig.json:/devwars/tsconfig.json
-      - ./api/tslint.json:/devwars/tslint.json
-      - ./api/firebase.json:/devwars/firebase.json
+      - ./api/:/devwars
+      - /devwars/node_modules
     depends_on:
       - database
     links:
