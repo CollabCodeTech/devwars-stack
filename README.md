@@ -20,7 +20,7 @@
 1.  Replace each `.env.service.example` with `.env.service` and fill out each file with the keys we required in the prerequisites
 1. Make sure you have a filed called `firebase.json` in the root of the repository. If you run the next step without this, you may see a folder with the name `firebase.json`, if so, just replace it with your real `firebase.json` and restart.
 1. `docker-compose up -d`
-1. `docker-compose exec api yarn run seed:users`
+1. `docker-compose exec api npm run seed:users`
 1. Make sure your [hosts file](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/) has the following lines
 ```text
 127.0.0.1 devwars.test
