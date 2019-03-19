@@ -3,10 +3,10 @@ FROM node
 WORKDIR /devwars
 
 ADD ./api/package.json .
-ADD ./api/yarn.lock .
+ADD ./api/package-lock.json .
 
-RUN yarn
+RUN npm install
 
 EXPOSE 3030
 
-ENTRYPOINT ["yarn", "run", "dev"]
+ENTRYPOINT ["npm", "run", "dev"]
