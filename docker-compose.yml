@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 services:
   reverse-proxy:
@@ -15,12 +15,16 @@ services:
       - "traefik.port=8080"
       - "traefik.frontend.rule=Host:traefik.devwars.test"
   database:
-    image: mysql:5.7
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ./postgres:/postgres/data
     environment:
-      MYSQL_DATABASE: devwars_api
-      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      POSTGRES_DB: devwars
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
     labels:
       - "traefik.enable=false"
       - "traefik.backend=database"
